@@ -1,0 +1,56 @@
+{% extends 'base.html' %} 
+{% block content %}
+<head>
+    <style>.mydiv {
+        border: 5px outset rgb(71, 73, 70);
+        background-color: rgb(96, 98, 98);
+        text-align: center;
+      }
+     
+    </style>
+</head>
+<div class="mydiv">
+    <h1>Tasks</h1><a  class="btn btn-success" href="addtask">Add_task</a>
+    
+
+</div>
+
+
+
+<table border="2px" class="table table-dark">
+    <tr>
+        <th>Task</th>
+        <th>Priority</th>
+        <th>Date</th>
+        <th>Update</th>
+        <th>Done</th>
+        
+    </tr>
+{% for i in tasks %}
+<tr>
+    <td>
+        {{i.name}}
+
+    </td>
+    <td>
+        {{i.priority}}
+
+    </td>
+    <td>
+        {{i.date}}
+    </td>
+    
+    <td>
+        <a class="btn btn-primary mb-2" href="update/{{i.id}}">Update</a>
+
+    </td>
+    <td>
+        <a class="btn btn-danger" href=deltask/{{i.id}}>Done</a>
+    </td>
+    
+</tr>
+
+{% endfor %}
+</table>
+
+{% endblock %}

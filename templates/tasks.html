@@ -1,0 +1,28 @@
+{% extends 'base.html'%}
+{% block content %}
+<head>
+    <style>
+        .grid{
+            display: grid;
+            place-items: center;
+        }
+    </style>
+</head>
+<div class=".grid">
+    <div class="grid">
+        <form method="post" class="p-3 shadow">
+            {% csrf_token %}
+           <p>Task name </p> <input type="text" name="tname" value=""><br>
+           <p>priority </p> <input type="text" name="priority" value=""><br><br>
+           <p>Date </p> <input type="date" name="date" value=""><br>
+            <input class="btn btn-primary mb-2" type="submit" name="submit">
+        </form>
+    
+    </div>
+    
+        
+    {% endblock %}
+
+</div>
+
+    
